@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.geometry.Pos?>
+<BorderPane prefHeight="650" prefWidth="900" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.planner.DashboardController">
+
+    <!--Top Bar -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #2C3E50;">
+            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            <Label style="-fx-text-fill: white; -fx-font-size: 18 px;" text="📘 Study Dashboard" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label fx:id="clockLabel"
+                   text="12:00 PM"
+                   style="-fx-text-fill: orange;
+              -fx-font-size: 18px;
+              -fx-font-weight: bold;
+              -fx-background-color: rgba(0,0,0,0.1);
+              -fx-padding: 5px 10px;
+              -fx-border-color: orange;
+              -fx-border-radius: 5px;
+              -fx-background-radius: 5px;" />
+            <Button onAction="#handleLogout"
+                    text="Logout"
+                    style="-fx-background-color: #E74C3C;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 8px;" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar -->
+    <left>
+        <VBox prefWidth="200" spacing="10" style="-fx-background-color: #001F3F;">
+            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            <Button onAction="#showTaskCreation" prefWidth="180" text="Task Creation" />
+            <Button onAction="#onViewTasks" prefWidth="180" text="View Tasks" />
+            <Button onAction="#onMarkComplete" prefWidth="180" text="Mark Task Complete" />
+            <Button onAction="#onEditorDelete" prefWidth="180" text="Edit or Delete Task" />
+            <Button onAction="#onSearchTask" prefWidth="180" text="Search Tasks" />
+            <Button onAction="#showPomodoro" prefWidth="180" text="Pomodoro Timer" />
+            <Button onAction="#showAIHelper" prefWidth="180" text="AI Study Helper" />
+            <Button onAction="#showNotes" prefWidth="180" text="Notes" />
+            <Button onAction="#showMood" prefWidth="180" text="Mood and Suggestions" />
+        </VBox>
+    </left>
+
+    <!-- Center Content Area -->
+    <center>
+        <VBox fx:id="mainContent" spacing="10">
+            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS">
+                <ImageView fx:id="welcomeImageView" fitWidth="650" preserveRatio="true">
+                    <effect>
+                        <GaussianBlur radius="0" />
+                    </effect>
+                </ImageView>
+
+                <Label fx:id="welcomeText"
+                       text="Welcome to the Dashboard!"
+                       style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #00008b;"
+
+                       StackPane.alignment="TOP_CENTER">
+                    <padding>
+                        <Insets top="05" />
+                    </padding>
+                </Label>
+            </StackPane>
+
+
+
+
+            <HBox fx:id="summaryPanel" spacing="20" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #FFF5E1; -fx-border-color: #DADADA; -fx-border-radius: 8; -fx-padding: 12px; -fx-background-radius: 8px;">
+                <Label fx:id="totalTasksLabel" text="📌 Total Tasks: 0" textFill="#1A237E">
+                    <font><Font name="Arial Black" size="13" /></font>
+                </Label>
+                <Label fx:id="completedTasksLabel" text="✅ Completed: 0" textFill="#2E7D32">
+                    <font><Font name="Arial Black" size="13" /></font>
+                </Label>
+                <Label fx:id="pendingTasksLabel" text="⏳ Pending: 0" textFill="#EF6C00">
+                    <font><Font name="Arial Black" size="13" /></font>
+                </Label>
+                <Label fx:id="highPriorityLabel" text="⚠ High Priority: 0" textFill="#C62828">
+                    <font><Font name="Arial Black" size="13" /></font>
+                </Label>
+                <Button text="🔄 Refresh" onAction="#loadTaskSummary"
+                        style="-fx-background-color: transparent; -fx-text-fill: #1A237E; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

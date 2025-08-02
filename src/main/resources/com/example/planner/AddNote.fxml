@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.planner.AddNoteController" spacing="15" alignment="CENTER" prefWidth="400" prefHeight="400"
+      style="-fx-background-color: #f0f4f8; -fx-padding: 20;">
+
+    <Label text="Add New Note" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #fc8f00;"/>
+
+    <TextField fx:id="titleField" promptText="Enter Note Title"
+               style="-fx-border-color: #090dfa; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5;"/>
+
+    <TextArea fx:id="contentArea" promptText="Enter Note Content" prefRowCount="10" wrapText="true"
+              style="-fx-border-color: #090dfa; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5;"/>
+
+    <Button text="Add Note" onAction="#handleAddNote"
+            style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;"/>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill: #090dfa; -fx-font-weight: bold;"/>
+
+</VBox>

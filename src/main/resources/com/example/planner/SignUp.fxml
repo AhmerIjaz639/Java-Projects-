@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="com.example.planner.SignupController" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" prefHeight="463.0" prefWidth="600.0">
+    <left>
+        <AnchorPane prefWidth="187.0" style="-fx-background-color: #005A9C;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="0" layoutY="50">
+
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="463.0" prefWidth="373.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="26.0" layoutY="93.0" text="Username" textFill="#005a9c">
+                    <font><Font name="System Bold" size="21.0"/></font>
+                </Label>
+                <TextField fx:id="usernameField" layoutX="74.0" layoutY="131.0" promptText="Enter Username"/>
+                <Label layoutX="22.0" layoutY="158.0" text="Password" textFill="#005a9c">
+                    <font><Font name="System Bold" size="21.0"/></font>
+                </Label>
+                <PasswordField fx:id="passwordField" layoutX="74.0" layoutY="197.0" promptText="Enter Password"/>
+                <Label layoutX="26.0" layoutY="226.0" text="Confirm Password" textFill="#005a9c">
+                    <font><Font name="System Bold" size="21.0"/></font>
+                </Label>
+                <PasswordField fx:id="confirmPasswordField" layoutX="74.0" layoutY="267.0" promptText="Re-Enter Password"/>
+                <Button layoutX="162.0" layoutY="308.0" text="Sign Up" textFill="WHITE" style="-fx-background-color: #005a9c;" onAction="#handleSignup">
+                    <font><Font size="20.0"/></font>
+                </Button>
+                <Label layoutX="59.0" layoutY="22.0" text="  Welcome to Smart Academic Planner" textFill="#005a9c" prefHeight="76.0" prefWidth="293.0">
+                    <font><Font name="System Bold" size="16.0"/></font>
+                </Label>
+                <Label layoutX="81.0" layoutY="378.0" text="Already have an account?">
+                    <font><Font size="11.0"/></font>
+                </Label>
+                <Button layoutX="212.0" layoutY="373.0" text="Login" textFill="WHITE" style="-fx-background-color: #005A9C;" onAction="#loadLogin">
+                    <font><Font size="11.0"/></font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

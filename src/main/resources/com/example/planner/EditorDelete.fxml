@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.paint.Color?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.planner.EditorDeleteController"
+            style="-fx-background-color: #f4f6fb;">
+
+    <top>
+        <VBox style="-fx-background-color: #003366; -fx-padding: 15;">
+            <Label text="Edit or Delete Tasks"
+                   style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+    <HBox alignment="CENTER_LEFT" spacing="10" prefWidth="100">
+        <Button fx:id="backButton" text="←"
+                style="-fx-font-size: 20px; -fx-background-color: transparent; -fx-text-fill: #FFA500; -fx-cursor: hand;"
+                onAction="#handleBackButton"/>
+        <Label text="Back To DashBoard" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFA500;" />
+    </HBox>
+    <center>
+        <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+            <TableView fx:id="taskTable" prefHeight="300" style="-fx-background-color: white; -fx-border-color: #dcdcdc;">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                    <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="100"/>
+                    <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="150"/>
+                    <TableColumn fx:id="completeColumn" text="Complete" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0;">
+            <HBox spacing="10">
+                <TextField fx:id="nameField" promptText="Task Name" style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+                <TextField fx:id="priorityField" promptText="Priority" style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+                <DatePicker fx:id="dueDatePicker" style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+                <CheckBox fx:id="completeCheckBox" text="Complete"/>
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Edit Task" onAction="#handleEdit"
+                        style="-fx-background-color: #0077cc; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+                <Button text="Delete Task" onAction="#handleDelete"
+                        style="-fx-background-color: #ff6600; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

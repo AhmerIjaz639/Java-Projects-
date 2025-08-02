@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.planner.SearchNoteController"
+      spacing="15" alignment="CENTER" prefWidth="400" prefHeight="400"
+      style="-fx-background-color: #f0f4f8; -fx-padding: 20;">
+
+    <Label text="Search Note"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #fc8f00;"/>
+
+    <TextField fx:id="idField" promptText="Enter Note ID"
+               style="-fx-border-color: #090dfa; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5;"/>
+
+    <Button text="Search by ID" onAction="#searchById"
+            style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;"/>
+
+    <TextField fx:id="titleField" promptText="Enter Note Title"
+               style="-fx-border-color: #090dfa; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5;"/>
+
+    <Button text="Search by Title" onAction="#searchByTitle"
+            style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;"/>
+
+    <TextArea fx:id="resultArea" prefRowCount="8" wrapText="true" editable="false"
+              style="-fx-border-color: #090dfa; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5; -fx-control-inner-background: white;"/>
+
+</VBox>

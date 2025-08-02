@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.planner.PomodoroController"
+            prefHeight="500.0" prefWidth="750.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #003366, #336699);">
+
+    <!-- Title -->
+    <top>
+        <Label fx:id="titleLabel" text="Pomodoro Timer" BorderPane.alignment="CENTER"
+               style="-fx-text-fill: #FFA500; -fx-font-size: 40px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold; -fx-padding: 30 0 20 0;" />
+    </top>
+
+    <!-- Sidebar Left -->
+    <left>
+        <VBox spacing="25" alignment="CENTER" prefWidth="180" style="-fx-padding: 30;">
+            <Button text="← Back" onAction="#handleBackButton"
+                    style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15;"/>
+            <Button text="Start" fx:id="startButton" onAction="#handleStart"
+                    style="-fx-background-color: #00BFFF; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15;"/>
+        </VBox>
+    </left>
+
+    <!-- Center Content -->
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 40;">
+            <Label fx:id="timeLabel" text="25:00"
+                   style="-fx-font-size: 70px; -fx-text-fill: white; -fx-font-family: 'Consolas'; -fx-font-weight: bold;" />
+            <Button text="Stop" fx:id="stopButton" onAction="#handleStop"
+                    style="-fx-background-color: #FF6347; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15;" />
+            <TextField fx:id="customTimeField" promptText="Enter custom time in minutes" prefWidth="250.0"
+                       style="-fx-font-size: 14px; -fx-background-radius: 10; -fx-padding: 8;"/>
+        </VBox>
+    </center>
+
+    <!-- Sidebar Right -->
+    <right>
+        <VBox spacing="25" alignment="CENTER" prefWidth="180" style="-fx-padding: 30;">
+            <Button text=" Reset" onAction="#handleReset"
+                    style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15;"/>
+        </VBox>
+    </right>
+</BorderPane>

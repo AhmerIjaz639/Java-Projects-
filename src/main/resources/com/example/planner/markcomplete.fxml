@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.planner.MarkCompleteController"
+            style="-fx-background-color: #1E2A78;"
+            prefWidth="900" prefHeight="650">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Label text="🗂 Task List"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #FFA500;"/>
+
+            <TableView fx:id="taskTable" prefHeight="300" prefWidth="600"
+                       style="-fx-background-color: #16225F; -fx-border-color: #FFA500; -fx-border-width: 2;">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"
+                                 style="-fx-background-color: #FFA500; -fx-text-fill: #1E2A78; -fx-font-weight: bold;"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"
+                                 style="-fx-background-color: #FFA500; -fx-text-fill: #1E2A78; -fx-font-weight: bold;"/>
+                    <TableColumn fx:id="completeColumn" text="Completed" prefWidth="100"
+                                 style="-fx-background-color: #FFA500; -fx-text-fill: #1E2A78; -fx-font-weight: bold;"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Enter Task ID:"
+                       style="-fx-text-fill: #FFA500; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+                <TextField fx:id="taskIdField"
+                           style="-fx-background-color: #16225F; -fx-text-fill: white; -fx-border-color: #FFA500; -fx-border-radius: 4;"/>
+                <Button text="Update Status" onAction="#handleUpdate"
+                        style="-fx-background-color: #FFA500; -fx-text-fill: #1E2A78; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Label fx:id="statusLabel"
+                   style="-fx-text-fill: #FFA500; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" >
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Button fx:id="BackButton" text="←"
+                    style="-fx-font-size: 20px; -fx-background-color: transparent; -fx-text-fill: #FFA500; -fx-cursor: hand;"
+                    onAction="#handleBackButton"/>
+        </HBox>
+    </bottom>
+</BorderPane>

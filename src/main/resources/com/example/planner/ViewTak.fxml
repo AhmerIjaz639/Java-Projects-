@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.planner.ViewTaskController" spacing="15" alignment="TOP_CENTER"
+      prefWidth="900" prefHeight="650"
+      style="-fx-background-color: #1E3A8A; -fx-padding: 20;">
+
+    <HBox alignment="CENTER_LEFT" spacing="10" prefWidth="100">
+        <Button fx:id="backButton" text="←"
+                style="-fx-font-size: 20px; -fx-background-color: transparent; -fx-text-fill: #FFA500; -fx-cursor: hand;"
+                onAction="#handleBackButton"/>
+        <Label text="Back To DashBoard" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFA500;" />
+    </HBox>
+
+    <ComboBox fx:id="filterComboBox" promptText="Select Filter"
+              style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+    <TextField fx:id="inputField" promptText="Enter search term" visible="false"
+               style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-prompt-text-fill: #FFD580; -fx-font-size: 14px;" />
+
+    <HBox spacing="10" visible="false" fx:id="datePickersBox">
+        <DatePicker fx:id="startDatePicker" promptText="Start Date"
+                    style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-prompt-text-fill: #FFD580;" />
+        <DatePicker fx:id="endDatePicker" promptText="End Date"
+                    style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-prompt-text-fill: #FFD580;" />
+    </HBox>
+
+    <ListView fx:id="resultList" prefHeight="300" prefWidth="400"
+              style="-fx-control-inner-background: #2563EB; -fx-text-fill: white; -fx-font-size: 14px;" />
+<!--    <Button text="Mark Complete"-->
+<!--            onAction="#onMarkComplete"-->
+<!--            style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-cursor: hand;" />-->
+
+    <Button text="Apply Filter" onAction="#onApplyFilter"
+            style="-fx-background-color: #FFA500; -fx-text-fill: #1E3A8A; -fx-font-weight: bold; -fx-font-size: 16px; -fx-cursor: hand;" />
+</VBox>

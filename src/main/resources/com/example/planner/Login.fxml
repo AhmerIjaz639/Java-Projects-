@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="com.example.planner.LoginController" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" prefHeight="463.0" prefWidth="600.0">
+    <left>
+        <AnchorPane prefWidth="187.0" style="-fx-background-color: #005A9C;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="0" layoutY="50">
+                    <image>
+
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="463.0" prefWidth="373.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="23.0" layoutY="106.0" text="Username" textFill="#005a9c">
+                    <font><Font name="System Bold" size="21.0"/></font>
+                </Label>
+                <TextField fx:id="usernameField" layoutX="72.0" layoutY="149.0" promptText="Enter Username"/>
+                <Label layoutX="25.0" layoutY="200.0" text="Password" textFill="#005a9c">
+                    <font><Font name="System Bold" size="21.0"/></font>
+                </Label>
+                <PasswordField fx:id="passwordField" layoutX="72.0" layoutY="241.0" promptText="Enter Password"/>
+                <Button layoutX="167.0" layoutY="357.0" text="Login" textFill="WHITE" style="-fx-background-color: #005a9c;" onAction="#handleLogin">
+                    <font><Font size="20.0"/></font>
+                </Button>
+                <Label layoutX="59.0" layoutY="22.0" prefHeight="76.0" prefWidth="293.0" text="  Welcome to Smart Academic Planner" textFill="#005a9c">
+                    <font><Font name="System Bold" size="16.0"/></font>
+                </Label>
+                <Button layoutX="196.0" layoutY="282.0" text="Sign Up" textFill="WHITE" style="-fx-background-color: #005A9C;" onAction="#loadSignup">
+                    <font><Font size="11.0"/></font>
+                </Button>
+                <Label layoutX="68.0" layoutY="286.0" text="Don't have an account ?">
+                    <font><Font size="11.0"/></font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

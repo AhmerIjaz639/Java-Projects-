@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.planner.NotesMenuController" spacing="20" alignment="TOP_CENTER" prefWidth="400" prefHeight="350"
+      style="-fx-background-color: #003366; -fx-padding: 20;">
+
+
+    <HBox alignment="CENTER_LEFT" prefWidth="100">
+        <Button fx:id="BackButton" text="← Back" onAction="#handleBackButton"
+                style="-fx-font-size: 16px; -fx-background-color: transparent; -fx-text-fill: #fc8f00; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Main buttons area -->
+    <VBox spacing="15" alignment="CENTER" prefWidth="100">
+
+        <Button text="Add Note" onAction="#openAddNote"
+                style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+        <Button text="View Notes" onAction="#openViewNotes"
+                style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+        <Button text="Delete Note" onAction="#openDeleteNote"
+                style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+        <Button text="Search Note" onAction="#openSearchNote"
+                style="-fx-background-color: #fc8f00; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+    </VBox>
+
+</VBox>

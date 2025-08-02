@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.planner.ChatController">
+
+    <!-- Chat Area (center) -->
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+            <content>
+                <VBox fx:id="chatBox" spacing="10" style="-fx-background-color: #f5f5f5;" alignment="TOP_LEFT">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+
+    <bottom>
+        <VBox spacing="10" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <!-- Back Button Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Button fx:id="backButton" text="←"
+                        style="-fx-font-size: 20px; -fx-background-color: transparent; -fx-text-fill: #FFA500; -fx-cursor: hand;"
+                        onAction="#handleBackButton"/>
+                <Label text="Back To DashBoard" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFA500;" />
+            </HBox>
+
+            <!-- Input Area -->
+            <HBox spacing="10">
+                <TextField fx:id="userInput" promptText="Type your message..." HBox.hgrow="ALWAYS"/>
+                <Button text="Send" onAction="#handleSend"
+                        style="-fx-background-color: #ff8800; -fx-text-fill: white;"/>
+                <Button fx:id="stopButton" text="Stop" onAction="#handleStop"
+                        style="-fx-background-color: #cc0000; -fx-text-fill: white;"/>
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+
+</BorderPane>
